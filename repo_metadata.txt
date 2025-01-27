@@ -1,0 +1,5 @@
+Natural/SHIP-ORDER=[{"program_type" : "Program"}]
+Natural/Service_call_shipping=[{"program_type" : "Program"}]
+Natural/customer_management=[{"program_type" : "Program"}]
+Natural/map_comment_subroutines=[{"program_type" : "Subroutine"}]
+Natural/order_processing=[{"program_type" : "Program"}]
