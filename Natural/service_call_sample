@@ -1,0 +1,35 @@
+DEFINE DATA
+LOCAL
+1 #REQUEST1 (A100)
+1 #RESPONSE1 (A100)
+1 #REQUEST2 (A100)
+1 #RESPONSE2 (A100)
+END-DEFINE
+
+* Initialize request data for the first service call
+MOVE 'Request data for Service 1' TO #REQUEST1
+
+* Make the first service call
+CALLNAT 'SERVICE1' #REQUEST1 #RESPONSE1
+
+* Process the response from the first service call
+IF #RESPONSE1 = 'Expected Response 1'
+  WRITE 'Service 1 call successful'
+ELSE
+  WRITE 'Service 1 call failed'
+END-IF
+
+* Initialize request data for the second service call
+MOVE 'Request data for Service 2' TO #REQUEST2
+
+* Make the second service call
+CALLNAT 'SERVICE2' #REQUEST2 #RESPONSE2
+
+* Process the response from the second service call
+IF #RESPONSE2 = 'Expected Response 2'
+  WRITE 'Service 2 call successful'
+ELSE
+  WRITE 'Service 2 call failed'
+END-IF
+
+END
