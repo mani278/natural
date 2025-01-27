@@ -1,0 +1,19 @@
+DEFINE DATA
+LOCAL
+1 #CITY (A20)
+1 #COMMAND (A80)
+1 #TEMPERATURE (N4.1)
+END-DEFINE
+
+MOVE 'New York' TO #CITY
+COMPRESS 'python weather_service.py' #CITY INTO #COMMAND LEAVING NO
+
+CALL 'SHCMD' #COMMAND RETURN #TEMPERATURE
+
+IF #TEMPERATURE NE 'Error'
+  WRITE 'The current temperature in' #CITY 'is' #TEMPERATURE '°C.'
+ELSE
+  WRITE 'Failed to retrieve temperature data.'
+END-IF
+
+END
